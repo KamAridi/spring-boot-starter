@@ -22,6 +22,7 @@ public class UserController {
 
     @PostMapping("/users")
     public String createUser(UserEntity userEntity) {
+
         userService.createOrUpdate(userEntity);
         return "redirect:/users";
     }
@@ -37,7 +38,7 @@ public class UserController {
     public String getUserById(@PathVariable("id") Integer id,
                               Model model) {
         UserEntity user = userService.findById(id);
-        model.addAttribute(user);
+        model.addAttribute("user", user);
         return "all-users";
     }
 
