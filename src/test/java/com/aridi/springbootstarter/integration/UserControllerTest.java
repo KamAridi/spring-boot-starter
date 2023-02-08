@@ -21,15 +21,15 @@ class UserControllerTest extends IntegrationTestBase {
                 .andExpect(MockMvcResultMatchers.status().is2xxSuccessful())
                 .andExpect(MockMvcResultMatchers.view().name("all-users"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists("allUsers"))
-                .andExpect(MockMvcResultMatchers.model().attribute("allUsers", IsCollectionWithSize.hasSize(31)));
+                .andExpect(MockMvcResultMatchers.model().attribute("allUsers", IsCollectionWithSize.hasSize(32)));
 
     }
 
     @Test
     void shouldCreateUser() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.post("/users")
-                        .param("firstname", "alex")
-                        .param("lastname", "alexov"))
+                        .param("firstname", "ne alex")
+                        .param("lastname", "ne alexov"))
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection());
     }
 

@@ -6,8 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,4 +19,10 @@ public class UserEntity {
 
     private String firstname;
     private String lastname;
+
+    public static final class Fields {
+        public static final String id = "id";
+        public static final String firstname = "firstname";
+        public static final String lastname = "lastname";
+    }
 }
